@@ -2,6 +2,6 @@ firstFormID:"89C3FACC-B133-4944-935B-A7346E4D07BB",
 i18nDataSource:"db:/svy_framework/i18n_messages",
 modulesNames:"EW_Login,AUT_Login",
 onOpenMethodID:"D84E359C-9168-4D92-9B32-F22CB825E563",
-titleText:"StudioMiazzoWebApps - Login",
+titleText:"PresenzaSemplice - Login",
 typeid:43,
 uuid:"F01A6126-5A97-4930-9DF4-76AF4C9BE905"
