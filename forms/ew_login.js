@@ -1,6 +1,9 @@
 /**
  * @type {String}
  *
+/**
+ * @type {String}
+ *
  * @properties={typeid:35,uuid:"1E2EA2F9-B039-4B40-8729-1A65E310074C"}
  */
 var html = '';
