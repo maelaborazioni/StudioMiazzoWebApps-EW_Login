@@ -170,7 +170,7 @@ function deepLoginToken(various,arguments)
 {
 	return false;
 	
-	//http://localhost:8080/servoy-webclient/ss/s/StudioMiazzoWebApps/m/deepLoginToken/a/args/token/token_hash/owner/owner_hash
+	//http://localhost:8080/servoy-webclient/ss/s/PresenzaSemplice/m/deepLoginToken/a/args/token/token_hash/owner/owner_hash
 	
 //	if(!arguments)
 //		return false;
@@ -242,11 +242,11 @@ function deepLoginToken(various,arguments)
  */
 function deepLoginFromApp(various,arguments)
 {
-    //http://localhost:8080/servoy-webclient/ss?s=StudioMiazzoWebApps&m=deepLoginFromApp&a=args&token=token_hash
+    //http://localhost:8080/servoy-webclient/ss?s=PresenzaSemplice&m=deepLoginFromApp&a=args&token=token_hash
 	
 	if(!arguments)
 		return false;
-	
+
 	// crypted token as passed from our source application
 	/** @type {String} */
 	var token = arguments['token']; 
@@ -332,6 +332,13 @@ function deepLoginFromApp(various,arguments)
 		application.output('Can\'t find user organization\'s id for user ' + username + ' of owner ' + owner,LOGGINGLEVEL.ERROR)
 		return false;
 	}
+	
+	// save cookies
+	application.setUserProperty(application.getSolutionName() +'.username',_authObj.username);
+	globals.svy_sec_lgn_organization_id = _authObj.organization_id;
+	application.setUserProperty(application.getSolutionName() +'.ownername',_authObj.owner);
+	application.setUserProperty(application.getSolutionName() +'.organization',_authObj.organization_id);
+	application.setUserProperty(application.getSolutionName() +'.connected','true');
 	
 	//for keeping track of logged in users per owner
 	application.addClientInfo(_authObj.owner_id + " " + _authObj.owner);
